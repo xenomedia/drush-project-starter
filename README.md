@@ -1,4 +1,4 @@
-# drush-project-starter
+# drush-project-starter for Drupal 7
 
 ## Install 
 download to sites/all/drush
