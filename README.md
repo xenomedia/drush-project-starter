@@ -13,6 +13,9 @@ edit:
     + change URL on croncheck.drush.inc:100
     + change URL on croncheck.drush.inc:104 (2 instances)
     + change URL on croncheck.drush.inc:105 (2 instances)
+- create patches.make in the root of your site (or edit drushrc.php and edit the location "$options['patch-file'] = 'patches.make';") 
+    + Add "api = 2"
+    + Add "core = 7.x"
 
 ## Optional reading
 
