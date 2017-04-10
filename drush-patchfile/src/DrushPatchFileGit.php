@@ -110,7 +110,11 @@ class DrushPatchFileGit {
 
     switch ($patch['status']) {
       case static::PATCH_APPLIED:
-        throw new Exception("Patch {$patch['url']} already applied to $directory.");
+        echo dt('Patch @url already applied to @directory.', array(
+          '@url' => $patch['url'],
+          '@directory' => $directory,
+        )) . "\n";
+        return TRUE;
 
       case static::PATCH_UNDETERMINED;
         throw new Exception("Cannot apply patch {$patch['url']} to $directory.");
