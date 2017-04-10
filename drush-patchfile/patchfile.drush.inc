@@ -262,6 +262,15 @@ $request = array (
   }
 }
 
+/**
+ * Implements hook_pm_post_update().
+ */
+function patchfile_pm_post_update($project_name, $installed_release, $project) {
+  if (drush_patchfile_get_project_patches($project_name)) {
+    drush_patchfile_patch_project($project_name, $project['full_project_path']);
+  }
+}
+
 function _drush_patchfile_patch_short_name($patch) {
   $return = basename($patch['url']);
   $return = preg_replace('/\.(patch|diff)$/', '', $return);
